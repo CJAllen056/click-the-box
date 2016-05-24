@@ -31,6 +31,35 @@ clickApp.unclickableColors = {
   "border-color": "lightgrey"
 };
 
+// Shop button listeners
+clickApp.mousesButtonListener = function() {
+  $("#mousesButton").click(function() {
+    clickApp.pointsPerSecond += clickApp.mousesClicksPerSecond;
+    clickApp.points -= clickApp.mousesCost;
+    clickApp.mousesCost = Math.floor(clickApp.mousesCost * 1.15);
+  });
+};
+
+clickApp.monkeysButtonListener = function() {
+
+};
+
+clickApp.childrenButtonListener = function() {
+
+};
+
+clickApp.professionalsButtonListener = function() {
+
+};
+
+clickApp.setShopListeners = function() {
+  clickApp.mousesButtonListener();
+  clickApp.monkeysButtonListener();
+  clickApp.childrenButtonListener();
+  clickApp.professionalsButtonListener();
+};
+
+// Header button listeners
 clickApp.pointsButtonListener = function() {
   $("#buyScoreboard").click(function() {
     $(".scoreboard").css("display", "inline-block");
@@ -53,9 +82,12 @@ clickApp.shopButtonListener = function() {
     clickApp.points -= 20;
     clickApp.updateHeaderButtonColors();
     clickApp.displayPoints();
+    clickApp.setShopListeners();
   });
 };
 
+
+// Header button colors
 clickApp.buyScoreButton = function() {
   console.log($("#buyScoreboard").css("color"));
   if (clickApp.points >= 2 && $("#buyScoreboard").css("color") !== "rgb(0, 0, 0)") {
@@ -90,6 +122,7 @@ clickApp.updateHeaderButtonColors = function() {
   clickApp.buyShopButton();
 };
 
+// Score display
 clickApp.displayPoints = function() {
   $(".points").html(clickApp.points);
 };
@@ -98,6 +131,7 @@ clickApp.displayPointsPerSecond = function() {
   $(".pointsPerSecond").html(clickApp.pointsPerSecond);
 };
 
+// Main app functions
 clickApp.setMainListener = function() {
   $(".clickBox").click(function() {
     clickApp.points += clickApp.pointsPerClick;
