@@ -37,26 +37,50 @@ clickApp.mousesButtonListener = function() {
     clickApp.pointsPerSecond += clickApp.mousesClicksPerSecond;
     clickApp.points -= clickApp.mousesCost;
     clickApp.mousesCost = Math.floor(clickApp.mousesCost * 1.15);
+    clickApp.updateHeaderButtonColors();
+    clickApp.shopButtonColors();
+    clickApp.displayPoints();
   });
 };
 
 clickApp.monkeysButtonListener = function() {
-
+  $("#monkeysButton").click(function() {
+    clickApp.pointsPerSecond += clickApp.monkeysClicksPerSecond;
+    clickApp.points -= clickApp.monkeysCost;
+    clickApp.monkeysCost = Math.floor(clickApp.monkeysCost * 1.15);
+    clickApp.updateHeaderButtonColors();
+    clickApp.shopButtonColors();
+    clickApp.displayPoints();
+  });
 };
 
 clickApp.childrenButtonListener = function() {
-
+  $("#childrenButton").click(function() {
+    clickApp.pointsPerSecond += clickApp.childrenClicksPerSecond;
+    clickApp.points -= clickApp.childrenCost;
+    clickApp.childrenCost = Math.floor(clickApp.childrenCost * 1.15);
+    clickApp.updateHeaderButtonColors();
+    clickApp.shopButtonColors();
+    clickApp.displayPoints();
+  });
 };
 
 clickApp.professionalsButtonListener = function() {
-
+  $("#professionalsButton").click(function() {
+    clickApp.pointsPerSecond += clickApp.professionalsClicksPerSecond;
+    clickApp.points -= clickApp.professionalsCost;
+    clickApp.professionalsCost = Math.floor(clickApp.professionalsCost * 1.15);
+    clickApp.updateHeaderButtonColors();
+    clickApp.shopButtonColors();
+    clickApp.displayPoints();
+  });
 };
 
 // Shop button colours
 clickApp.mousesButtonColors = function() {
   if (clickApp.points >= clickApp.mousesCost && $("#mousesButton").css("color") !== "rgb(0, 0, 0)") {
     $("#mousesButton").css(clickApp.clickableColors);
-    clickApp.shopButtonColors();
+    clickApp.mousesButtonListener();
   } else if (clickApp.points < clickApp.mousesCost) {
     $("#mousesButton").css(clickApp.unclickableColors);
     $("#mousesButton").unbind();
@@ -66,7 +90,7 @@ clickApp.mousesButtonColors = function() {
 clickApp.monkeysButtonColors = function() {
   if (clickApp.points >= clickApp.monkeysCost && $("#monkeysButton").css("color") !== "rgb(0, 0, 0)") {
     $("#monkeysButton").css(clickApp.clickableColors);
-    clickApp.shopButtonColors();
+    clickApp.monkeysButtonListener();
   } else if (clickApp.points < clickApp.monkeysCost) {
     $("#monkeysButton").css(clickApp.unclickableColors);
     $("#monkeysButton").unbind();
@@ -76,7 +100,7 @@ clickApp.monkeysButtonColors = function() {
 clickApp.childrenButtonColors = function() {
   if (clickApp.points >= clickApp.childrenCost && $("#childrenButton").css("color") !== "rgb(0, 0, 0)") {
     $("#childrenButton").css(clickApp.clickableColors);
-    clickApp.shopButtonColors();
+    clickApp.childrenButtonListener();
   } else if (clickApp.points < clickApp.childrenCost) {
     $("#childrenButton").css(clickApp.unclickableColors);
     $("#childrenButton").unbind();
@@ -86,7 +110,7 @@ clickApp.childrenButtonColors = function() {
 clickApp.professionalsButtonColors = function() {
   if (clickApp.points >= clickApp.professionalsCost && $("#professionalsButton").css("color") !== "rgb(0, 0, 0)") {
     $("#professionalsButton").css(clickApp.clickableColors);
-    clickApp.shopButtonColors();
+    clickApp.professionalsButtonListener();
   } else if (clickApp.points < clickApp.professionalsCost) {
     $("#professionalsButton").css(clickApp.unclickableColors);
     $("#professionalsButton").unbind();
@@ -106,6 +130,9 @@ clickApp.pointsButtonListener = function() {
     $(".scoreboard").css("display", "inline-block");
     $("#buyScoreboard").css("visibility", "hidden");
     clickApp.points -= 2;
+    clickApp.updateHeaderButtonColors();
+    clickApp.shopButtonColors();
+    clickApp.displayPoints();
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
