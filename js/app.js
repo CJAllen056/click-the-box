@@ -9,6 +9,8 @@ clickApp.scoreButtonListener = function() {
     $(".scoreboard").css("display", "inline-block");
     $("#buyScoreboard").css("visibility", "hidden");
     clickApp.score -= 2;
+    clickApp.buyPricesButton();
+    clickApp.buyShopButton();
   });
 };
 
@@ -27,6 +29,11 @@ clickApp.buyScoreButton = function() {
       "border-color": "black"
     });
     clickApp.scoreButtonListener();
+  } else {
+    $("#buyScoreboard").css({
+      "color": "lightgrey",
+      "border-color": "lightgrey"
+    });
   }
 };
 
@@ -37,6 +44,11 @@ clickApp.buyPricesButton = function() {
       "border-color": "black"
     });
     clickApp.pricesButtonListener();
+  } else {
+    $("#buyPrices").css({
+      "color": "lightgrey",
+      "border-color": "lightgrey"
+    });
   }
 };
 
@@ -47,6 +59,11 @@ clickApp.buyShopButton = function() {
       "border-color": "black"
     });
     clickApp.shopButtonListener();
+  } else {
+    $("#buyShop").css({
+      "color": "lightgrey",
+      "border-color": "lightgrey"
+    });
   }
 };
 
