@@ -10,6 +10,7 @@ clickApp.scoreButtonListener = function() {
     $("#buyScoreboard").css("visibility", "hidden");
     clickApp.score -= 2;
     clickApp.updateHeaderButtonColors();
+    clickApp.displayScore();
   });
 };
 
@@ -63,10 +64,15 @@ clickApp.updateHeaderButtonColors = function() {
   clickApp.buyShopButton();
 };
 
+clickApp.displayScore = function() {
+  $(".score").html(clickApp.score);
+}
+
 clickApp.setMainListener = function() {
   $(".clickBox").click(function() {
     clickApp.score += clickApp.scorePerClick;
     clickApp.updateHeaderButtonColors();
+    clickApp.displayScore();
   });
 };
 

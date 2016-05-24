@@ -6,7 +6,10 @@ body {
     height: 590px;
 
     .leftBoard {
+      display: inline-block;
       height: 100%;
+      width: 70%;
+      float: left;
 
       .clickBoxAndScoreboard {
         display: inline-block;
@@ -42,8 +45,24 @@ body {
     }
 
     .rightBoard {
+      display: inline-block;
       height: 100%;
-      display: none;
+      width: 30%;
+      float: left;
+
+      .shopContainer {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .shopButton {
+          display: inline-block;
+          height: 40px;
+          margin-bottom: 2px;
+          width: 90%;
+          border: 2px solid black;
+        }
+      }
     }
   }
   header {
