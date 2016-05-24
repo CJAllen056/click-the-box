@@ -52,11 +52,52 @@ clickApp.professionalsButtonListener = function() {
 
 };
 
-clickApp.setShopListeners = function() {
-  clickApp.mousesButtonListener();
-  clickApp.monkeysButtonListener();
-  clickApp.childrenButtonListener();
-  clickApp.professionalsButtonListener();
+// Shop button colours
+clickApp.mousesButtonColors = function() {
+  if (clickApp.points >= clickApp.mousesCost && $("#mousesButton").css("color") !== "rgb(0, 0, 0)") {
+    $("#mousesButton").css(clickApp.clickableColors);
+    clickApp.shopButtonColors();
+  } else if (clickApp.points < clickApp.mousesCost) {
+    $("#mousesButton").css(clickApp.unclickableColors);
+    $("#mousesButton").unbind();
+  }
+};
+
+clickApp.monkeysButtonColors = function() {
+  if (clickApp.points >= clickApp.monkeysCost && $("#monkeysButton").css("color") !== "rgb(0, 0, 0)") {
+    $("#monkeysButton").css(clickApp.clickableColors);
+    clickApp.shopButtonColors();
+  } else if (clickApp.points < clickApp.monkeysCost) {
+    $("#monkeysButton").css(clickApp.unclickableColors);
+    $("#monkeysButton").unbind();
+  }
+};
+
+clickApp.childrenButtonColors = function() {
+  if (clickApp.points >= clickApp.childrenCost && $("#childrenButton").css("color") !== "rgb(0, 0, 0)") {
+    $("#childrenButton").css(clickApp.clickableColors);
+    clickApp.shopButtonColors();
+  } else if (clickApp.points < clickApp.childrenCost) {
+    $("#childrenButton").css(clickApp.unclickableColors);
+    $("#childrenButton").unbind();
+  }
+};
+
+clickApp.professionalsButtonColors = function() {
+  if (clickApp.points >= clickApp.professionalsCost && $("#professionalsButton").css("color") !== "rgb(0, 0, 0)") {
+    $("#professionalsButton").css(clickApp.clickableColors);
+    clickApp.shopButtonColors();
+  } else if (clickApp.points < clickApp.professionalsCost) {
+    $("#professionalsButton").css(clickApp.unclickableColors);
+    $("#professionalsButton").unbind();
+  }
+};
+
+clickApp.shopButtonColors = function() {
+  clickApp.mousesButtonColors();
+  clickApp.monkeysButtonColors();
+  clickApp.childrenButtonColors();
+  clickApp.professionalsButtonColors();
 };
 
 // Header button listeners
@@ -66,6 +107,7 @@ clickApp.pointsButtonListener = function() {
     $("#buyScoreboard").css("visibility", "hidden");
     clickApp.points -= 2;
     clickApp.updateHeaderButtonColors();
+    clickApp.shopButtonColors();
     clickApp.displayPoints();
   });
 };
@@ -81,15 +123,14 @@ clickApp.shopButtonListener = function() {
     $("#buyshop").css("visibility", "hidden");
     clickApp.points -= 20;
     clickApp.updateHeaderButtonColors();
+    clickApp.shopButtonColors();
     clickApp.displayPoints();
-    clickApp.setShopListeners();
   });
 };
 
 
 // Header button colors
 clickApp.buyScoreButton = function() {
-  console.log($("#buyScoreboard").css("color"));
   if (clickApp.points >= 2 && $("#buyScoreboard").css("color") !== "rgb(0, 0, 0)") {
     $("#buyScoreboard").css(clickApp.clickableColors);
     clickApp.pointsButtonListener();
@@ -139,8 +180,8 @@ clickApp.setMainListener = function() {
   $(".clickBox").click(function() {
     clickApp.points += clickApp.pointsPerClick;
     clickApp.updateHeaderButtonColors();
+    clickApp.shopButtonColors();
     clickApp.displayPoints();
-    console.log(clickApp.points);
   });
 };
 
