@@ -48,13 +48,16 @@ body {
   }
   header {
     height: 28px;
+    font-size: 0;
 
     .buyButton {
       display: inline-block;
       height: 20px;
+      width: 100px;
       padding: 0 1px;
       margin: 2px;
       border: 2px solid lightgrey;
+      font-size: 16px;
       color: lightgrey;
       text-align: center;
     }

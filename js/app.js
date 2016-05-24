@@ -7,6 +7,8 @@ clickApp.scorePerClick  = 1;
 clickApp.scoreButtonListener = function() {
   $("#buyScoreboard").click(function() {
     $(".scoreboard").css("display", "inline-block");
+    $("#buyScoreboard").css("visibility", "hidden");
+    clickApp.score -= 2;
   });
 };
 
@@ -19,7 +21,7 @@ clickApp.shopButtonListener = function() {
 };
 
 clickApp.buyScoreButton = function() {
-  if (clickApp.score === 2) {
+  if (clickApp.score >= 2) {
     $("#buyScoreboard").css({
       "color": "black",
       "border-color": "black"
@@ -29,7 +31,7 @@ clickApp.buyScoreButton = function() {
 };
 
 clickApp.buyPricesButton = function() {
-  if (clickApp.score === 10) {
+  if (clickApp.score >= 10) {
     $("#buyPrices").css({
       "color": "black",
       "border-color": "black"
@@ -39,7 +41,7 @@ clickApp.buyPricesButton = function() {
 };
 
 clickApp.buyShopButton = function() {
-  if (clickApp.score === 20) {
+  if (clickApp.score >= 20) {
     $("#buyShop").css({
       "color": "black",
       "border-color": "black"
