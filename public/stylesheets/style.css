@@ -1,8 +1,7 @@
 main {
   text-align: center;
-  height: 700px;
-
-  .clickBox {
+  height: 700px; }
+  main .clickBox {
     display: inline-block;
     height: 150px;
     width: 150px;
@@ -12,6 +11,6 @@ main {
     text-align: center;
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
-  }
-}
+    transform: translateY(-50%); }
+
+/*# sourceMappingURL=style.css.map */
