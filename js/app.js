@@ -9,8 +9,7 @@ clickApp.scoreButtonListener = function() {
     $(".scoreboard").css("display", "inline-block");
     $("#buyScoreboard").css("visibility", "hidden");
     clickApp.score -= 2;
-    clickApp.buyPricesButton();
-    clickApp.buyShopButton();
+    clickApp.updateHeaderButtonColors();
   });
 };
 
@@ -22,57 +21,52 @@ clickApp.shopButtonListener = function() {
 
 };
 
+clickApp.clickableColors = {
+  "color": "black",
+  "border-color": "black"
+};
+clickApp.unclickableColors = {
+  "color": "lightgrey",
+  "border-color": "lightgrey"
+};
+
 clickApp.buyScoreButton = function() {
   if (clickApp.score >= 2) {
-    $("#buyScoreboard").css({
-      "color": "black",
-      "border-color": "black"
-    });
+    $("#buyScoreboard").css(clickApp.clickableColors);
     clickApp.scoreButtonListener();
   } else {
-    $("#buyScoreboard").css({
-      "color": "lightgrey",
-      "border-color": "lightgrey"
-    });
+    $("#buyScoreboard").css(clickApp.unclickableColors);
   }
 };
 
 clickApp.buyPricesButton = function() {
   if (clickApp.score >= 10) {
-    $("#buyPrices").css({
-      "color": "black",
-      "border-color": "black"
-    });
+    $("#buyPrices").css(clickApp.clickableColors);
     clickApp.pricesButtonListener();
   } else {
-    $("#buyPrices").css({
-      "color": "lightgrey",
-      "border-color": "lightgrey"
-    });
+    $("#buyPrices").css(clickApp.unclickableColors);
   }
 };
 
 clickApp.buyShopButton = function() {
   if (clickApp.score >= 20) {
-    $("#buyShop").css({
-      "color": "black",
-      "border-color": "black"
-    });
+    $("#buyShop").css(clickApp.clickableColors);
     clickApp.shopButtonListener();
   } else {
-    $("#buyShop").css({
-      "color": "lightgrey",
-      "border-color": "lightgrey"
-    });
+    $("#buyShop").css(clickApp.unclickableColors);
   }
+};
+
+clickApp.updateHeaderButtonColors = function() {
+  clickApp.buyScoreButton();
+  clickApp.buyPricesButton();
+  clickApp.buyShopButton();
 };
 
 clickApp.setMainListener = function() {
   $(".clickBox").click(function() {
     clickApp.score += clickApp.scorePerClick;
-    clickApp.buyScoreButton();
-    clickApp.buyPricesButton();
-    clickApp.buyShopButton();
+    clickApp.updateHeaderButtonColors();
   });
 };
 
