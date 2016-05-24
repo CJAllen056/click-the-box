@@ -95,6 +95,7 @@ clickApp.buyScoreButton = function() {
     clickApp.pointsButtonListener();
   } else if (clickApp.points < 2) {
     $("#buyScoreboard").css(clickApp.unclickableColors);
+    $("#buyScoreboard").unbind();
   }
 };
 
@@ -104,6 +105,7 @@ clickApp.buyPricesButton = function() {
     clickApp.pricesButtonListener();
   } else if (clickApp.points < 10) {
     $("#buyPrices").css(clickApp.unclickableColors);
+    $("#buyPrices").unbind();
   }
 };
 
@@ -113,6 +115,7 @@ clickApp.buyShopButton = function() {
     clickApp.shopButtonListener();
   } else if (clickApp.points < 20) {
     $("#buyShop").css(clickApp.unclickableColors);
+    $("#buyShop").unbind();
   }
 };
 
