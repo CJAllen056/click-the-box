@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/CJAllen056/click-the-box/issues"
   },
-  "homepage": "https://github.com/CJAllen056/click-the-box#readme",
-  "dependencies": {
-    "angular": "^1.5.5"
-  }
+  "homepage": "https://github.com/CJAllen056/click-the-box#readme"
 }
