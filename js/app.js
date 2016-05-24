@@ -11,6 +11,16 @@ clickApp.monkeys        = 0;
 clickApp.children       = 0;
 clickApp.professionals  = 0;
 
+clickApp.mousesClicksPerSecond        = 0.1;
+clickApp.monkeysClicksPerSecond       = 1;
+clickApp.childrenClicksPerSecond      = 10;
+clickApp.professionalsClicksPerSecond = 100;
+
+clickApp.mousesCost         = 15;
+clickApp.monkeysCost        = 100;
+clickApp.childrenCost       = 1100;
+clickApp.professionalsCost  = 12000;
+
 // Header variables
 clickApp.clickableColors = {
   "color": "black",
@@ -27,7 +37,7 @@ clickApp.pointsButtonListener = function() {
     $("#buyScoreboard").css("visibility", "hidden");
     clickApp.points -= 2;
     clickApp.updateHeaderButtonColors();
-    clickApp.displayScore();
+    clickApp.displayPoints();
   });
 };
 
@@ -42,7 +52,7 @@ clickApp.shopButtonListener = function() {
     $("#buyshop").css("visibility", "hidden");
     clickApp.points -= 20;
     clickApp.updateHeaderButtonColors();
-    clickApp.displayScore();
+    clickApp.displayPoints();
   });
 };
 
@@ -80,15 +90,19 @@ clickApp.updateHeaderButtonColors = function() {
   clickApp.buyShopButton();
 };
 
-clickApp.displayScore = function() {
+clickApp.displayPoints = function() {
   $(".points").html(clickApp.points);
+};
+
+clickApp.displayPointsPerSecond = function() {
+  $(".pointsPerSecond").html(clickApp.pointsPerSecond);
 };
 
 clickApp.setMainListener = function() {
   $(".clickBox").click(function() {
     clickApp.points += clickApp.pointsPerClick;
     clickApp.updateHeaderButtonColors();
-    clickApp.displayScore();
+    clickApp.displayPoints();
     console.log(clickApp.points);
   });
 };
