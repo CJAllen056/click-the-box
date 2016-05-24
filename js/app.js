@@ -5,7 +5,9 @@ clickApp.scorePerSecond = 0;
 clickApp.scorePerClick  = 1;
 
 clickApp.scoreButtonListener = function() {
-  if ($("buyScoreboard"))
+  $("#buyScoreboard").click(function() {
+    $(".scoreboard").css("display", "inline-block");
+  });
 };
 
 clickApp.pricesButtonListener = function() {

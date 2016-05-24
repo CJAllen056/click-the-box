@@ -5,18 +5,45 @@ body {
     text-align: center;
     height: 590px;
 
-    .clickBox {
-      display: inline-block;
-      height: 150px;
-      width: 150px;
-      margin: 0 auto;
-      border: 2px solid black;
-      font-size: 50px;
-      line-height: 50px;
-      text-align: center;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+    .leftBoard {
+      height: 100%;
+
+      .clickBoxAndScoreboard {
+        display: inline-block;
+        width: 154px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .clickBox {
+          display: inline-block;
+          height: 150px;
+          width: 150px;
+          margin: 0 auto;
+          border: 2px solid black;
+          font-size: 50px;
+          line-height: 50px;
+          text-align: center;
+        }
+
+        .scoreboard {
+          display: none;
+          height: 40px;
+          width: 150px;
+          margin-top: 2px;
+          border: 2px solid black;
+
+          p {
+            height: 20px;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .rightBoard {
+      height: 100%;
+      display: none;
     }
   }
   header {

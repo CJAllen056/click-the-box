@@ -3,18 +3,35 @@ body {
   body main {
     text-align: center;
     height: 590px; }
-    body main .clickBox {
-      display: inline-block;
-      height: 150px;
-      width: 150px;
-      margin: 0 auto;
-      border: 2px solid black;
-      font-size: 50px;
-      line-height: 50px;
-      text-align: center;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%); }
+    body main .leftBoard {
+      height: 100%; }
+      body main .leftBoard .clickBoxAndScoreboard {
+        display: inline-block;
+        width: 154px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); }
+        body main .leftBoard .clickBoxAndScoreboard .clickBox {
+          display: inline-block;
+          height: 150px;
+          width: 150px;
+          margin: 0 auto;
+          border: 2px solid black;
+          font-size: 50px;
+          line-height: 50px;
+          text-align: center; }
+        body main .leftBoard .clickBoxAndScoreboard .scoreboard {
+          display: none;
+          height: 40px;
+          width: 150px;
+          margin-top: 2px;
+          border: 2px solid black; }
+          body main .leftBoard .clickBoxAndScoreboard .scoreboard p {
+            height: 20px;
+            margin: 0; }
+    body main .rightBoard {
+      height: 100%;
+      display: none; }
   body header {
     height: 28px; }
     body header .buyButton {
