@@ -1,14 +1,31 @@
 var clickApp = clickApp || {};
 
-clickApp.score          = 0;
-clickApp.scorePerSecond = 0;
-clickApp.scorePerClick  = 1;
+// Points variables
+clickApp.points          = 0;
+clickApp.pointsPerSecond = 0;
+clickApp.pointsPerClick  = 1;
 
-clickApp.scoreButtonListener = function() {
+// Shop item variables
+clickApp.mouses         = 0;
+clickApp.monkeys        = 0;
+clickApp.children       = 0;
+clickApp.professionals  = 0;
+
+// Header variables
+clickApp.clickableColors = {
+  "color": "black",
+  "border-color": "black"
+};
+clickApp.unclickableColors = {
+  "color": "lightgrey",
+  "border-color": "lightgrey"
+};
+
+clickApp.pointsButtonListener = function() {
   $("#buyScoreboard").click(function() {
     $(".scoreboard").css("display", "inline-block");
     $("#buyScoreboard").css("visibility", "hidden");
-    clickApp.score -= 2;
+    clickApp.points -= 2;
     clickApp.updateHeaderButtonColors();
     clickApp.displayScore();
   });
@@ -19,41 +36,40 @@ clickApp.pricesButtonListener = function() {
 };
 
 clickApp.shopButtonListener = function() {
-
-};
-
-clickApp.clickableColors = {
-  "color": "black",
-  "border-color": "black"
-};
-clickApp.unclickableColors = {
-  "color": "lightgrey",
-  "border-color": "lightgrey"
+  $("#buyShop").click(function() {
+    $(".rightBoard").css("display", "inline-block");
+    $(".leftBoard").css("width", "70%");
+    $("#buyshop").css("visibility", "hidden");
+    clickApp.points -= 20;
+    clickApp.updateHeaderButtonColors();
+    clickApp.displayScore();
+  });
 };
 
 clickApp.buyScoreButton = function() {
-  if (clickApp.score >= 2) {
+  console.log($("#buyScoreboard").css("color"));
+  if (clickApp.points >= 2 && $("#buyScoreboard").css("color") !== "rgb(0, 0, 0)") {
     $("#buyScoreboard").css(clickApp.clickableColors);
-    clickApp.scoreButtonListener();
-  } else {
+    clickApp.pointsButtonListener();
+  } else if (clickApp.points < 2) {
     $("#buyScoreboard").css(clickApp.unclickableColors);
   }
 };
 
 clickApp.buyPricesButton = function() {
-  if (clickApp.score >= 10) {
+  if (clickApp.points >= 10 && $("#buyPrices").css("color") !== "rgb(0, 0, 0)") {
     $("#buyPrices").css(clickApp.clickableColors);
     clickApp.pricesButtonListener();
-  } else {
+  } else if (clickApp.points < 10) {
     $("#buyPrices").css(clickApp.unclickableColors);
   }
 };
 
 clickApp.buyShopButton = function() {
-  if (clickApp.score >= 20) {
+  if (clickApp.points >= 20 && $("#buyShop").css("color") !== "rgb(0, 0, 0)") {
     $("#buyShop").css(clickApp.clickableColors);
     clickApp.shopButtonListener();
-  } else {
+  } else if (clickApp.points < 20) {
     $("#buyShop").css(clickApp.unclickableColors);
   }
 };
@@ -65,14 +81,15 @@ clickApp.updateHeaderButtonColors = function() {
 };
 
 clickApp.displayScore = function() {
-  $(".score").html(clickApp.score);
-}
+  $(".points").html(clickApp.points);
+};
 
 clickApp.setMainListener = function() {
   $(".clickBox").click(function() {
-    clickApp.score += clickApp.scorePerClick;
+    clickApp.points += clickApp.pointsPerClick;
     clickApp.updateHeaderButtonColors();
     clickApp.displayScore();
+    console.log(clickApp.points);
   });
 };
 

@@ -6,7 +6,7 @@ body {
     body main .leftBoard {
       display: inline-block;
       height: 100%;
-      width: 70%;
+      width: 100%;
       float: left; }
       body main .leftBoard .clickBoxAndScoreboard {
         display: inline-block;
@@ -33,7 +33,7 @@ body {
             height: 20px;
             margin: 0; }
     body main .rightBoard {
-      display: inline-block;
+      display: none;
       height: 100%;
       width: 30%;
       float: left; }
