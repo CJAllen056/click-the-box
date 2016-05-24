@@ -1,17 +1,35 @@
-main {
-  text-align: center;
-  height: 600px;
+body {
+  margin: 0;
 
-  .clickBox {
-    display: inline-block;
-    height: 150px;
-    width: 150px;
-    border: 2px solid black;
-    font-size: 50px;
-    line-height: 50px;
+  main {
     text-align: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 590px;
+
+    .clickBox {
+      display: inline-block;
+      height: 150px;
+      width: 150px;
+      margin: 0 auto;
+      border: 2px solid black;
+      font-size: 50px;
+      line-height: 50px;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  header {
+    height: 28px;
+
+    .buyButton {
+      display: inline-block;
+      height: 20px;
+      padding: 0 1px;
+      margin: 2px;
+      border: 2px solid lightgrey;
+      color: lightgrey;
+      text-align: center;
+    }
   }
 }
