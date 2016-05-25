@@ -37,10 +37,12 @@ clickApp.mousesButtonListener = function() {
     clickApp.pointsPerSecond += clickApp.mousesClicksPerSecond;
     clickApp.points -= clickApp.mousesCost;
     clickApp.mousesCost = Math.floor(clickApp.mousesCost * 1.15);
+    clickApp.mouses++;
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
     clickApp.mousesButtonCost();
+    clickApp.mousesButtonCount();
   });
 };
 
@@ -49,10 +51,12 @@ clickApp.monkeysButtonListener = function() {
     clickApp.pointsPerSecond += clickApp.monkeysClicksPerSecond;
     clickApp.points -= clickApp.monkeysCost;
     clickApp.monkeysCost = Math.floor(clickApp.monkeysCost * 1.15);
+    clickApp.monkeys++;
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
     clickApp.monkeysButtonCost();
+    clickApp.monkeysButtonCount();
   });
 };
 
@@ -61,10 +65,12 @@ clickApp.childrenButtonListener = function() {
     clickApp.pointsPerSecond += clickApp.childrenClicksPerSecond;
     clickApp.points -= clickApp.childrenCost;
     clickApp.childrenCost = Math.floor(clickApp.childrenCost * 1.15);
+    clickApp.children++;
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
     clickApp.childrenButtonCost();
+    clickApp.childrenButtonCount();
   });
 };
 
@@ -73,14 +79,16 @@ clickApp.professionalsButtonListener = function() {
     clickApp.pointsPerSecond += clickApp.professionalsClicksPerSecond;
     clickApp.points -= clickApp.professionalsCost;
     clickApp.professionalsCost = Math.floor(clickApp.professionalsCost * 1.15);
+    clickApp.professionals++;
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
     clickApp.professionalsButtonCost();
+    clickApp.professionalsButtonCount();
   });
 };
 
-// Shop button values
+// Shop button costs
 clickApp.mousesButtonCost = function() {
   $(".mousesCost").html(clickApp.mousesCost);
 };
@@ -97,7 +105,22 @@ clickApp.professionalsButtonCost = function() {
   $(".professionalsCost").html(clickApp.professionalsCost);
 };
 
+// Shop button counts
+clickApp.mousesButtonCount = function() {
+  $(".mousesCount").html(clickApp.mouses);
+};
 
+clickApp.monkeysButtonCount = function() {
+  $(".monkeysCount").html(clickApp.monkeys);
+};
+
+clickApp.childrenButtonCount = function() {
+  $(".childrenCount").html(clickApp.children);
+};
+
+clickApp.professionalsButtonCount = function() {
+  $(".professionalsCount").html(clickApp.professionals);
+};
 
 // Shop button colours
 clickApp.mousesButtonColors = function() {
