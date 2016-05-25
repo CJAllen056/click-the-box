@@ -175,6 +175,13 @@ clickApp.shopButtonColors = function() {
 };
 
 // Header button listeners
+clickApp.buttonsButtonListener = function() {
+  $("#buyButtons").click(function() {
+    $("header").html("<div class='buyButton' id='buyScoreboard'>buy scoreboard<span class='hiddenPrice'>: 2p</span></div><div class='buyButton' id='buyPrices'>buy prices<span class='hiddenPrice'>: 10p</span></div><div class='buyButton' id='buyShop'>buy shop<span class='hiddenPrice'>: 20p</span></div><div class='buyButton' id='buyUpgradeShop'>buy upgrades<span class='hiddenPrice'>: 100p</span></div><div class='buyButton' id='buyStyleShop'>buy styles<span class='hiddenPrice'>: 200p</span></div>");
+    clickApp.points -=1;
+  });
+};
+
 clickApp.pointsButtonListener = function() {
   $("#buyScoreboard").click(function() {
     $(".scoreboard").css("display", "inline-block");
@@ -207,6 +214,13 @@ clickApp.shopButtonListener = function() {
 
 
 // Header button colors
+clickApp.buyButtonsButton = function() {
+  if (clickApp.points >= 1) {
+    $("#buyButtons").css(clickApp.clickableColors);
+    clickApp.buttonsButtonListener();
+  }
+};
+
 clickApp.buyScoreButton = function() {
   if (clickApp.points >= 2 && $("#buyScoreboard").css("color") !== "rgb(0, 0, 0)") {
     $("#buyScoreboard").css(clickApp.clickableColors);
@@ -285,6 +299,7 @@ clickApp.updateScore = function() {
 clickApp.setMainListener = function() {
   $(".clickBox").click(function() {
     clickApp.points += clickApp.pointsPerClick;
+    clickApp.buyButtonsButton();
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
