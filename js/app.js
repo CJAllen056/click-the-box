@@ -246,7 +246,7 @@ clickApp.displayPoints = function() {
 };
 
 clickApp.displayPointsPerSecond = function() {
-  $(".pointsPerSecond").html((Math.floor(clickApp.pointsPerSecond * 10)) / 10);
+  $(".pointsPerSecond").html(clickApp.pointsPerSecond.toFixed(1));
 };
 
 clickApp.updateScore = function() {
