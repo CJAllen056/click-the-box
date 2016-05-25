@@ -237,10 +237,32 @@ clickApp.buyShopButton = function() {
   }
 };
 
+clickApp.buyUpgradeShopButton = function() {
+  if (clickApp.points >= 100 && $("#buyUpgradeShop").css("color") !== "rgb(0, 0, 0)") {
+    $("#buyUpgradeShop").css(clickApp.clickableColors);
+    clickApp.shopButtonListener();
+  } else if (clickApp.points < 20) {
+    $("#buyUpgradeShop").css(clickApp.unclickableColors);
+    $("#buyUpgradeShop").unbind();
+  }
+};
+
+clickApp.buyStyleShopButton = function() {
+  if (clickApp.points >= 200 && $("#buyStyleShop").css("color") !== "rgb(0, 0, 0)") {
+    $("#buyStyleShop").css(clickApp.clickableColors);
+    clickApp.shopButtonListener();
+  } else if (clickApp.points < 20) {
+    $("#buyStyleShop").css(clickApp.unclickableColors);
+    $("#buyStyleShop").unbind();
+  }
+};
+
 clickApp.updateHeaderButtonColors = function() {
   clickApp.buyScoreButton();
   clickApp.buyPricesButton();
   clickApp.buyShopButton();
+  clickApp.buyUpgradeShopButton();
+  clickApp.buyStyleShopButton();
 };
 
 // Score display
