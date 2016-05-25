@@ -40,6 +40,7 @@ clickApp.mousesButtonListener = function() {
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
+    clickApp.mousesButtonCost();
   });
 };
 
@@ -51,6 +52,7 @@ clickApp.monkeysButtonListener = function() {
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
+    clickApp.monkeysButtonCost();
   });
 };
 
@@ -62,6 +64,7 @@ clickApp.childrenButtonListener = function() {
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
+    clickApp.childrenButtonCost();
   });
 };
 
@@ -73,8 +76,28 @@ clickApp.professionalsButtonListener = function() {
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
+    clickApp.professionalsButtonCost();
   });
 };
+
+// Shop button values
+clickApp.mousesButtonCost = function() {
+  $(".mousesCost").html(clickApp.mousesCost);
+};
+
+clickApp.monkeysButtonCost = function() {
+  $(".monkeysCost").html(clickApp.monkeysCost);
+};
+
+clickApp.childrenButtonCost = function() {
+  $(".childrenCost").html(clickApp.childrenCost);
+};
+
+clickApp.professionalsButtonCost = function() {
+  $(".professionalsCost").html(clickApp.professionalsCost);
+};
+
+
 
 // Shop button colours
 clickApp.mousesButtonColors = function() {
@@ -133,9 +156,6 @@ clickApp.pointsButtonListener = function() {
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();
     clickApp.displayPoints();
-    clickApp.updateHeaderButtonColors();
-    clickApp.shopButtonColors();
-    clickApp.displayPoints();
   });
 };
 
@@ -147,7 +167,7 @@ clickApp.shopButtonListener = function() {
   $("#buyShop").click(function() {
     $(".rightBoard").css("display", "inline-block");
     $(".leftBoard").css("width", "70%");
-    $("#buyshop").css("visibility", "hidden");
+    $("#buyShop").css("visibility", "hidden");
     clickApp.points -= 20;
     clickApp.updateHeaderButtonColors();
     clickApp.shopButtonColors();

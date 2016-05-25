@@ -48,6 +48,21 @@ body {
           width: 90%;
           border: 2px solid lightgrey;
           color: lightgrey; }
+          body main .rightBoard .shopContainer .shopButton .shopButtonText {
+            display: inline-block;
+            float: left;
+            width: 80%;
+            line-height: 40px; }
+          body main .rightBoard .shopContainer .shopButton .shopButtonCount {
+            display: inline-block;
+            float: left;
+            width: 10%;
+            line-height: 40px; }
+          body main .rightBoard .shopContainer .shopButton .shopButtonCost {
+            display: inline-block;
+            float: left;
+            width: 10%;
+            line-height: 40px; }
   body header {
     height: 28px;
     font-size: 0; }
