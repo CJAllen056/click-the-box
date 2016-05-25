@@ -65,18 +65,23 @@ body {
             float: left;
             width: 20%;
             line-height: 40px; }
+          body main .rightBoard .shopContainer .shopButton .hiddenPrice {
+            display: none; }
   body header {
     height: 28px;
     font-size: 0; }
     body header .buyButton {
       display: inline-block;
       height: 20px;
-      width: 100px;
+      width: 140px;
       padding: 0 1px;
       margin: 2px;
       border: 2px solid lightgrey;
       font-size: 16px;
       color: lightgrey;
       text-align: center; }
+
+.hiddenPrice {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

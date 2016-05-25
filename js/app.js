@@ -2,7 +2,7 @@ var clickApp = clickApp || {};
 
 // Points variables
 clickApp.points          = 0;
-clickApp.pointsPerSecond = 0;
+clickApp.pointsPerSecond = 100;
 clickApp.pointsPerClick  = 1;
 
 // Shop item variables
@@ -94,19 +94,19 @@ clickApp.professionalsButtonListener = function() {
 
 // Shop button costs
 clickApp.mousesButtonCost = function() {
-  $(".mousesCost").html(clickApp.mousesCost);
+  $(".mousesCost").html(clickApp.mousesCost + "p");
 };
 
 clickApp.monkeysButtonCost = function() {
-  $(".monkeysCost").html(clickApp.monkeysCost);
+  $(".monkeysCost").html(clickApp.monkeysCost + "p");
 };
 
 clickApp.childrenButtonCost = function() {
-  $(".childrenCost").html(clickApp.childrenCost);
+  $(".childrenCost").html(clickApp.childrenCost + "p");
 };
 
 clickApp.professionalsButtonCost = function() {
-  $(".professionalsCost").html(clickApp.professionalsCost);
+  $(".professionalsCost").html(clickApp.professionalsCost + "p");
 };
 
 // Shop button counts
@@ -187,7 +187,10 @@ clickApp.pointsButtonListener = function() {
 };
 
 clickApp.pricesButtonListener = function() {
-
+  $("#buyPrices").click(function() {
+    $(".hiddenPrice").removeClass("hiddenPrice");
+    $("#buyPrices").css("visibility", "hidden");
+  });
 };
 
 clickApp.shopButtonListener = function() {

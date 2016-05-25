@@ -9,9 +9,9 @@
 </head>
 <body>
   <header>
-    <div class="buyButton" id="buyScoreboard">buy scoreboard</div>
-    <div class="buyButton" id="buyPrices">buy prices</div>
-    <div class="buyButton" id="buyShop">buy shop</div>
+    <div class="buyButton" id="buyScoreboard">buy scoreboard<span class="hiddenPrice">: 2p</span></div>
+    <div class="buyButton" id="buyPrices">buy prices<span class="hiddenPrice">: 10p</span></div>
+    <div class="buyButton" id="buyShop">buy shop<span class="hiddenPrice">: 20p</span></div>
   </header>
   <main class="gameBoard">
     <div class="leftBoard">
@@ -21,23 +21,23 @@
         </div>
         <div class="scoreboard">
           <p>points: <span class="points"></span></p>
-          <p>points per second: <span class="pointsPerSecond">0</span></p>
+          <p>per second: <span class="pointsPerSecond">0</span></p>
         </div>
       </div>
     </div>
     <div class="rightBoard">
       <div class="shopContainer">
         <div class="shopButton" id="mousesButton">
-          <div class="mousesCount shopButtonCount">0</div><div class="shopButtonText">hire mouse</div><div class="mousesCost shopButtonCost">15</div>
+          <div class="mousesCount shopButtonCount">0</div><div class="shopButtonText">hire mouse</div><div class="mousesCost shopButtonCost hiddenPrice">15p</div>
         </div>
         <div class="shopButton" id="monkeysButton">
-          <div class="monkeysCount shopButtonCount">0</div><div class="shopButtonText">hire monkey</div><div class="monkeysCost shopButtonCost">100</div>
+          <div class="monkeysCount shopButtonCount">0</div><div class="shopButtonText">hire monkey</div><div class="monkeysCost shopButtonCost hiddenPrice">100p</div>
         </div>
         <div class="shopButton" id="childrenButton">
-          <div class="childrenCount shopButtonCount">0</div><div class="shopButtonText">hire child worker</div><div class="childrenCost shopButtonCost">1100</div>
+          <div class="childrenCount shopButtonCount">0</div><div class="shopButtonText">hire child worker</div><div class="childrenCost shopButtonCost hiddenPrice">1100p</div>
         </div>
         <div class="shopButton" id="professionalsButton">
-          <div class="professionalsCount shopButtonCount">0</div><div class="shopButtonText">hire professional box clicker</div><div class="professionalsCost shopButtonCost">12000</div>
+          <div class="professionalsCount shopButtonCount">0</div><div class="shopButtonText">hire professional box clicker</div><div class="professionalsCost shopButtonCost hiddenPrice">12000p</div>
         </div>
       </div>
     </div>

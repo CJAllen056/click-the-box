@@ -83,6 +83,10 @@ body {
             width: 20%;
             line-height: 40px
           }
+
+          .hiddenPrice {
+            display: none;
+          }
         }
       }
     }
@@ -94,7 +98,7 @@ body {
     .buyButton {
       display: inline-block;
       height: 20px;
-      width: 100px;
+      width: 140px;
       padding: 0 1px;
       margin: 2px;
       border: 2px solid lightgrey;
@@ -103,4 +107,8 @@ body {
       text-align: center;
     }
   }
+}
+
+.hiddenPrice {
+  display: none;
 }
