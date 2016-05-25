@@ -43,6 +43,7 @@ clickApp.mousesButtonListener = function() {
     clickApp.displayPoints();
     clickApp.mousesButtonCost();
     clickApp.mousesButtonCount();
+    clickApp.displayPointsPerSecond();
   });
 };
 
@@ -57,6 +58,7 @@ clickApp.monkeysButtonListener = function() {
     clickApp.displayPoints();
     clickApp.monkeysButtonCost();
     clickApp.monkeysButtonCount();
+    clickApp.displayPointsPerSecond();
   });
 };
 
@@ -71,6 +73,7 @@ clickApp.childrenButtonListener = function() {
     clickApp.displayPoints();
     clickApp.childrenButtonCost();
     clickApp.childrenButtonCount();
+    clickApp.displayPointsPerSecond();
   });
 };
 
@@ -85,6 +88,7 @@ clickApp.professionalsButtonListener = function() {
     clickApp.displayPoints();
     clickApp.professionalsButtonCost();
     clickApp.professionalsButtonCount();
+    clickApp.displayPointsPerSecond();
   });
 };
 
@@ -238,11 +242,18 @@ clickApp.updateHeaderButtonColors = function() {
 
 // Score display
 clickApp.displayPoints = function() {
-  $(".points").html(clickApp.points);
+  $(".points").html(Math.floor(clickApp.points));
 };
 
 clickApp.displayPointsPerSecond = function() {
-  $(".pointsPerSecond").html(clickApp.pointsPerSecond);
+  $(".pointsPerSecond").html((Math.floor(clickApp.pointsPerSecond * 10)) / 10);
+};
+
+clickApp.updateScore = function() {
+  clickApp.points += (clickApp.pointsPerSecond/5);
+  clickApp.displayPoints();
+  clickApp.updateHeaderButtonColors();
+  clickApp.shopButtonColors();
 };
 
 // Main app functions
@@ -257,6 +268,7 @@ clickApp.setMainListener = function() {
 
 clickApp.start = function() {
   clickApp.setMainListener();
+  setInterval("clickApp.updateScore()", 200);
 };
 
 $(clickApp.start);
