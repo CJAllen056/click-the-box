@@ -2,7 +2,7 @@ var clickApp = clickApp || {};
 
 // Points variables
 clickApp.points          = 0;
-clickApp.pointsPerSecond = 100;
+clickApp.pointsPerSecond = 0;
 clickApp.pointsPerClick  = 1;
 
 // Shop item variables
